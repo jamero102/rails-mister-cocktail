@@ -1,0 +1,6 @@
+<div class="container pt-3">
+<h1><%= @cocktail.name %></h1>
+<p><%= @cocktail.doses %></p>
+<p><%= @cocktail.ingredients %></p>
+<p><%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %></p>
+</div>
