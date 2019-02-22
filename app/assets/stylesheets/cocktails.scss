@@ -5,6 +5,12 @@
   background: #110A16;
 }
 
+.list-page {
+  background: #110A16;
+  padding: 21px;
+  margin-bottom: 30px;
+}
+
 .form-page {
   height: 100vh;
   background-image: url("https://images.pexels.com/photos/1723638/pexels-photo-1723638.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
@@ -16,7 +22,6 @@
   position: absolute;
   width: 500px;
   height: 300px;
-  z-index: 15;
   top: 50%;
   left: 50%;
   margin: -180px 0 0 -250px;

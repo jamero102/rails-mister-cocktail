@@ -1,6 +1,13 @@
 class CocktailsController < ApplicationController
   def index
-    @cocktails = Cocktail.all
+    @cocktail = Cocktail.new
+    params['query'].nil? ? @cocktails = Cocktail.all : @cocktails = Cocktail.where("name LIKE '%#{params['query']}%'")
+    @query = params['query']
+    @total = Cocktail.all.length
+    @search_msg = ""
+    unless @query.nil?
+      @search_msg = "You searched for #{@query}. We found #{@cocktails.length} flats out of #{@total}"
+    end
   end
 
   def show
