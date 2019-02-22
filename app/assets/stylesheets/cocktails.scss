@@ -1,3 +1,93 @@
 // Place all the styles related to the Cocktails controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.index-page {
+  background: #110A16;
+}
+
+.form-page {
+  height: 100vh;
+  background-image: url("https://images.pexels.com/photos/1723638/pexels-photo-1723638.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-position: center;
+  background-size: cover;
+}
+
+.form-div {
+  position: absolute;
+  width: 500px;
+  height: 300px;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  margin: -180px 0 0 -250px;
+  box-shadow: 0 0 5px grey;
+  border-radius: 4px;
+  background-color: #324361;
+  color: white;
+}
+
+.show-page {
+  background: #110A16;
+}
+
+.top-picture {
+  height: 380px;
+  background-position: center;
+  background-size: cover;
+}
+
+.margin-top-negative {
+  margin-top: -95px;
+}
+
+#first-card {
+  opacity: 0.8;
+}
+
+.container-n {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
+}
+
+.cocktail-show-card {
+    background: #110A16;
+    color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    border-radius: 3px;
+}
+
+.input-group {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+}
+
+.input-group-addon {
+    padding: .5rem .75rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.25;
+    color: #495057;
+    text-align: center;
+    background-color: #e9ecef;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+}
+
+.input-group-addon, .input-group-btn {
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.cocktail-form {
+    background-color: #F8F9FA;
+    padding: 24px;
+    border-radius: 3px;
+}

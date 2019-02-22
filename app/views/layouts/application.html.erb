@@ -7,13 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag "application" %>
+    <%= stylesheet_link_tag 'application' %>
+     <%= javascript_include_tag "application" %>
+    <%= javascript_pack_tag "application" %>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.6/jquery.pagepiling.js"></script>
+    <script>
+      $(document).ready(function() {
+      $('#pagepiling').pagepiling();
+      });
+    </script>
+
   </head>
 
   <body>
     <%= yield %>
-    <%= javascript_include_tag "application" %>
-    <%= javascript_pack_tag "application" %>
   </body>
 </html>

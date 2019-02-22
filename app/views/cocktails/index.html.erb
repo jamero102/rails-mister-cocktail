@@ -1,12 +1,21 @@
-<div class="container">
-<h1>Cocktails</h1>
-<%= @cocktails %>
-<div class="card">
-  <% @cocktails.each do |cocktail| %>
-  <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
-</div>
-<% end %>
-
-<%= link_to "Add new cocktail", new_cocktail_path %>
-
+<div id="pagepiling">
+  <div class="section">
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%=image_path "alcohol-bar-beer-1283219.jpg"%>);">
+      <div class="container">
+        <h1>Doses & Mimosas</h1>
+        <h2>Cocktails for every occasion</h2>
+        <a class="btn btn-light" href="/cocktails/new">Add a new cocktail</a>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <h2 class="text-light pt-3 mb-3">Pick your poison</h2>
+    <div class="cards">
+      <% @cocktails.each do |cocktail| %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cocktail.image %>)">
+          <%= link_to cocktail.name, cocktail_path(cocktail) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>

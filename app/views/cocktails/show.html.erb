@@ -1,6 +1,55 @@
-<div class="container pt-3">
-<h1><%= @cocktail.name %></h1>
-<p><%= @cocktail.doses %></p>
-<p><%= @cocktail.ingredients %></p>
-<p><%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %></p>
+<div class="show-page">
+
+  <div class="top-picture" style="background-image: url(<%= @cocktail.image %>)"></div>
+
+  <div class="container margin-top-negative">
+    <div class="row">
+      <div class="col-8">
+        <div class="cocktail-show-card" id="first-card">
+          <h1><%= @cocktail.name %></h1>
+        </div>
+        <div class="cocktail-show-card">
+          <h3>Recipe</h3>
+          <ul>
+            <% @cocktail.doses.each do |dose| %>
+              <li><%= dose.description %> of <%= dose.ingredient.name %>
+                <%= link_to "Delete", cocktail_dose_path(@cocktail, dose), method: :delete, data: { confirm: 'Are you sure?' } %>
+                </li>
+            <% end %>
+            </ul>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="cocktail-show-card">
+          <h5>Add to the Recipe!</h5>
+
+            <div class="input-group">
+              <%= simple_form_for [@cocktail, @dose] do |f| %>
+
+                  <div class="form-inputs select">
+                    <%= f.association :ingredient, input_html: { class: 'select2' } %>
+                    <%= f.input :description %>
+                  </div>
+
+                  <div class="form-actions">
+                    <%= f.button :submit, class: "btn btn-dark"%>
+                  </div>
+                <% end %>
+              </div>
+        </div>
+        <div class="cocktail-show-card">
+          <div class="flex-align">
+
+            <div class="flex">
+              <%= link_to "Edit", edit_cocktail_path(@cocktail), class: "btn btn-warning my-2" %>
+              <%= link_to "Delete", cocktail_path(@cocktail), class: "btn btn-danger my-2", method: :delete, data: { confirm: 'Are you sure?' } %>
+              <%= link_to "Home", cocktails_path, class: "btn btn-primary" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
