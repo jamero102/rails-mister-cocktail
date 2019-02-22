@@ -13,7 +13,7 @@
           <ul>
             <% @cocktail.doses.each do |dose| %>
               <li><%= dose.description %> of <%= dose.ingredient.name %>
-                <%= link_to "Delete", cocktail_dose_path(@cocktail, dose), method: :delete, data: { confirm: 'Are you sure?' } %>
+                <%= link_to "🗑Delete", cocktail_dose_path(@cocktail, dose), method: :delete, data: { confirm: 'Are you sure?' }, class: "text-light btn mr-5" %>
                 </li>
             <% end %>
             </ul>
@@ -43,8 +43,7 @@
           <div class="flex-align">
 
             <div class="flex">
-              <%= link_to "Edit", edit_cocktail_path(@cocktail), class: "btn btn-warning my-2" %>
-              <%= link_to "Delete", cocktail_path(@cocktail), class: "btn btn-danger my-2", method: :delete, data: { confirm: 'Are you sure?' } %>
+              <%= link_to "Edit Cocktail", edit_cocktail_path(@cocktail), class: "btn btn-light my-2" %>
               <%= link_to "Home", cocktails_path, class: "btn btn-primary" %>
             </div>
           </div>
